@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "category": "Rice Dishes"
+  },
+  {
+    "id": 2,
+    "category": "Curries"
+  },
+  {
+    "id": 3,
+    "category": "Vegetarian Dishes"
+  },
+  {
+    "id": 4,
+    "category": "Seafood"
+  },
+  {
+    "id": 5,
+    "category": "Sweets and Desserts"
+  },
+  {
+    "id": 6,
+    "category": "Snacks"
+  },
+  {
+    "id": 7,
+    "category": "Breads"
+  },
+  {
+    "id": 8,
+    "category": "Beverages"
+  },
+  {
+    "id": 9,
+    "category": "Fast Food"
+  },
+  {
+    "id": 10,
+    "category": "Meat"
+  },
+  {
+    "id": 11,
+    "category": "Fish"
+  }
+]
