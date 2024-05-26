@@ -1,16 +1,16 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
-import { useContext } from 'react';
-import { AuthContext } from '../Components/Providers/AuthProviders/AuthProviders';
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../Components/Providers/AuthProviders/AuthProviders";
 
 const usePurchaserName = (recipeId) => {
-    console.log(recipeId);
-    const { user } = useContext(AuthContext);
-    const { refetch, data: purchaserName = [] } = useQuery({
+  console.log(recipeId);
+  const { user } = useContext(AuthContext);
+  const { refetch, data: purchaserName = [] } = useQuery({
     queryKey: ["purchaserName", user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/purchaser-name/${recipeId}`,
+        `https://foodcorner-omega.vercel.app/purchaser-name/${recipeId}`,
         {
           method: "GET",
           headers: {

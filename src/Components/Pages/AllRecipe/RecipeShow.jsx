@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect } from "react";
+import { useState } from "react";
 
 const RecipeShow = ({ record, handleViewRecipe }) => {
   const [name, setName] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/purchaser-name/${record._id}`, {
+    fetch(`https://foodcorner-omega.vercel.app/purchaser-name/${record._id}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

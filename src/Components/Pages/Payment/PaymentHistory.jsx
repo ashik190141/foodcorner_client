@@ -9,17 +9,17 @@ const PaymentHistory = ({ email }) => {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/payment-history/${email}`, {
+    fetch(`https://foodcorner-omega.vercel.app/payment-history/${email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     })
       .then((res) => res.json())
-        .then((data) => {
-            setShow(false)
-            setPaymentHistory(data)
-        });
+      .then((data) => {
+        setShow(false);
+        setPaymentHistory(data);
+      });
   }, [email]);
   return (
     <div className="max-w-7xl mx-auto">
@@ -56,7 +56,9 @@ const PaymentHistory = ({ email }) => {
                 </table>
               </div>
             </div>
-          ) : <div className="py-5 text-xl">You Have No Payment History</div>}
+          ) : (
+            <div className="py-5 text-xl">You Have No Payment History</div>
+          )}
         </div>
       ) : (
         <UploadingSpinner></UploadingSpinner>
