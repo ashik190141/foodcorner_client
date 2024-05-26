@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <div className='bg-black mt-28'>
             <div className='text-white pt-28'>
-                <p className='text-5xl font-bold text-center mb-5'>American Region</p>
+                <p className='text-5xl font-bold text-center mb-5'>American Recipe</p>
                 <div className='flex md:flex-row flex-col items-center justify-center gap-10'>
                     <img src={img1} alt="" />
                     <img src={img2} alt="" />
@@ -20,7 +20,6 @@ const Footer = () => {
                 <FaGoogle className='me-2 text-white' />
                 <FaGithub className='me-2 text-white' />
                 <FaInstagram className='me-2 text-white' />
-                <FaTwitter className='me-2 text-white' />
             </div>
             <div className='text-white flex md:flex-row flex-col items-center justify-center gap-8 mt-5'>
                 <p>Advertising</p>

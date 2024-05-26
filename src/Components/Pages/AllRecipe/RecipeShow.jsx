@@ -19,7 +19,7 @@ const RecipeShow = ({ record, handleViewRecipe }) => {
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
       <figure>
-        <img src={record?.image} className="w-[400px] h-[300px]" alt="Album" />
+        <img src={record?.image} className="w-[400px] h-full" alt="Album" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{record?.name}</h2>
