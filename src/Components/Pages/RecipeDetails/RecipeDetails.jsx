@@ -162,9 +162,11 @@ const RecipeDetails = () => {
           <div className="py-2">{recipe?.watchCount} View</div>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="pt-2 text-xl">{recipe?.name}</div>
-            <div>
+            <div
+              onClick={() => handleReact(recipe?._id)}
+              className="border border-black px-3 py-1 rounded-md"
+            >
               <FaHeart
-                onClick={() => handleReact(recipe?._id)}
                 className={`text-2xl cursor-pointer ${
                   react.react ? "text-red-500" : ""
                 }`}

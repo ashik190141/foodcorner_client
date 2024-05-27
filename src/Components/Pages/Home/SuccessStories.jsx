@@ -144,11 +144,6 @@ const SuccessStories = () => {
                 </p>
                 <div className="flex items-center justify-between">
                   <a className="inline-flex items-center">
-                    <img
-                      className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
-                      src={`https://source.unsplash.com/200x200/?${each.keyWord}`}
-                      alt="carousel navigate ui"
-                    />
                     <span className="flex-grow flex flex-col pl-4">
                       <span className="title-font font-medium text-gray-900">
                         {each.name}
