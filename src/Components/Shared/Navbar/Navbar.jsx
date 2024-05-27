@@ -183,7 +183,7 @@ const Navbar = () => {
         <div className="flex gap-3 items-center justify-center">
           <img src={img1} alt="" className="w-16 h-12 rounded-lg" />
           <div className="text-white md:text-2xl text-xl font-bold">
-            <Link to="/">FoodZone</Link>
+            <Link to="/">FoodCorner</Link>
           </div>
         </div>
       </div>
