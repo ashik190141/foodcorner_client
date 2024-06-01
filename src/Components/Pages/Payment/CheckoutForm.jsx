@@ -119,7 +119,7 @@ const CheckoutForm = ({ price }) => {
   };
   return (
     <div className="flex items-center justify-center">
-      <form className="w-2/3 m-8" onSubmit={handleSubmit}>
+      <form className="w-full m-1 md:m-8" onSubmit={handleSubmit}>
         <CardElement
           options={{
             style: {

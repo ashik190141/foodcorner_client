@@ -22,34 +22,45 @@ const PaymentHistory = ({ email }) => {
       });
   }, [email]);
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto p-4">
       {!show ? (
         <div>
-          {paymentHistory.length != 0 ? (
+          {paymentHistory.length !== 0 ? (
             <div className="flex flex-col items-center justify-center">
-              <h3 className="text-2xl font-semibold my-4 text-center mt-10 mb-10">
+              <h3 className="text-2xl md:text-3xl font-semibold my-4 text-center mt-10 mb-10">
                 Payment History
               </h3>
-              <div className="overflow-x-auto">
-                <table className="table table-zebra">
-                  {/* head */}
+              <div className="overflow-x-auto w-full">
+                <table className="table-auto w-full">
                   <thead>
                     <tr>
-                      <th className="text-xl">#</th>
-                      <th className="text-xl text-center">Date</th>
-                      <th className="text-xl text-center">Transaction ID</th>
-                      <th className="text-xl text-center">Price</th>
+                      <th className="text-sm md:text-xl px-2 py-2">#</th>
+                      <th className="text-sm md:text-xl px-2 py-2 text-center">
+                        Date
+                      </th>
+                      <th className="text-sm md:text-xl px-2 py-2 text-center">
+                        Transaction ID
+                      </th>
+                      <th className="text-sm md:text-xl px-2 py-2 text-center">
+                        Price
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {paymentHistory.map((user, index) => (
                       <tr key={user._id}>
-                        <th className="text-xl">{index + 1}</th>
-                        <td className="text-xl">
+                        <th className="text-sm md:text-xl px-2 py-2">
+                          {index + 1}
+                        </th>
+                        <td className="text-sm md:text-xl px-2 py-2">
                           {useDateFormatter(user?.date)}
                         </td>
-                        <td className="text-xl">{user.transactionId}</td>
-                        <td className="text-xl text-center">$ {user.price}</td>
+                        <td className="text-sm md:text-xl px-2 py-2">
+                          {user.transactionId}
+                        </td>
+                        <td className="text-sm md:text-xl px-2 py-2 text-center">
+                          $ {user.price}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -57,11 +68,13 @@ const PaymentHistory = ({ email }) => {
               </div>
             </div>
           ) : (
-            <div className="py-5 text-xl">You Have No Payment History</div>
+            <div className="py-5 text-xl text-center">
+              You Have No Payment History
+            </div>
           )}
         </div>
       ) : (
-        <UploadingSpinner></UploadingSpinner>
+        <UploadingSpinner />
       )}
     </div>
   );

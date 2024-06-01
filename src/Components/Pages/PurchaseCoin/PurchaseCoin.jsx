@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 
 const PurchaseCoin = () => {
+    useTitle("Purchase")
     const listArray = [
       "Get Reward",
       "Recipe Check",

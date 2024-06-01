@@ -16,6 +16,7 @@ import PurchaseCoin from './Components/Pages/PurchaseCoin/PurchaseCoin.jsx';
 import Payment from './Components/Pages/Payment/Payment.jsx';
 import AllRecipe from './Components/Pages/AllRecipe/AllRecipe.jsx';
 import RecipeDetails from './Components/Pages/RecipeDetails/RecipeDetails.jsx';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute.jsx';
 
 const queryClient = new QueryClient();
 
@@ -31,15 +32,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-recipe",
-        element: <AddRecipe></AddRecipe>,
+        element: (
+          <PrivateRoute>
+            <AddRecipe></AddRecipe>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/purchaseCoin",
-        element: <PurchaseCoin></PurchaseCoin>,
+        element: (
+          <PrivateRoute>
+            <PurchaseCoin></PurchaseCoin>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/payment",
-        element: <Payment></Payment>,
+        element: (
+          <PrivateRoute>
+            <Payment></Payment>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/all-recipe",
@@ -47,8 +60,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/recipe/:id",
-        element: <RecipeDetails></RecipeDetails>
-      }
+        element: (
+          <PrivateRoute>
+            <RecipeDetails></RecipeDetails>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

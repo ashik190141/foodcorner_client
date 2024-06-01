@@ -12,7 +12,7 @@ const Navbar = () => {
   const { user, logOut, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const [coin, refetch] = useCoin();
-  // console.log(coin);
+  console.log(coin);
 
   const logoutHandler = () => {
     logOut()
@@ -181,7 +181,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex gap-3 items-center justify-center">
-          <img src={img1} alt="" className="w-16 h-12 rounded-lg" />
+          <img src={img1} alt="" className="w-16 h-12 rounded-lg ml-5" />
           <div className="text-white md:text-2xl text-xl font-bold">
             <Link to="/">FoodCorner</Link>
           </div>

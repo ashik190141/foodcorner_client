@@ -76,7 +76,7 @@ const AddRecipe = () => {
                   confirmButtonText: "Ok",
                 }).then((result) => {
                   if (result.isConfirmed) {
-                    navigate("/");
+                    navigate("/all-recipe");
                   }
                 });
               }
@@ -86,9 +86,114 @@ const AddRecipe = () => {
   };
   return (
     <div className="my-10">
-      <div className="hero min-h-screen">
-        <div className="card w-[50%] shadow-xl bg-base-100">
-          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+      <div className="hidden md:block">
+        <div className="hero min-h-screen">
+          <div className="w-[50%] shadow-xl bg-base-100">
+            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+              <h1 className="uppercase py-5 text-xl">Add Recipe</h1>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Recipe Name</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  {...register("name")}
+                  placeholder="Recipe Name"
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Country</span>
+                </label>
+                <select
+                  className="select p-2 border-2 border-black bg-transparent w-full"
+                  id="country"
+                  {...register("country", { required: true })}
+                >
+                  {country?.map((country) => (
+                    <option key={country.id} value={country.country}>
+                      {country.country}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Youtube Video Code</span>
+                </label>
+                <input
+                  type="url"
+                  id="videoUrl"
+                  {...register("videoUrl")}
+                  placeholder="Video Url"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Recipe Category</span>
+                </label>
+                <select
+                  className="select p-2 border-2 border-black bg-transparent w-full"
+                  id="category"
+                  {...register("category", { required: true })}
+                >
+                  {recipes?.map((category) => (
+                    <option key={category.id} value={category.category}>
+                      {category.category}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Recipe Details</span>
+                </label>
+                <textarea
+                  id="description"
+                  {...register("description")}
+                  placeholder="Description"
+                  className="textarea textarea-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Recipe Image</span>
+                </label>
+                <input
+                  type="file"
+                  id="image"
+                  {...register("image")}
+                  placeholder="Image URL"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control mt-6">
+                {!show ? (
+                  <input
+                    type="submit"
+                    value="Submit"
+                    className="input input-bordered hover:cursor-pointer"
+                  />
+                ) : (
+                  <div>
+                    <UploadingSpinner></UploadingSpinner>
+                  </div>
+                )}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div className="block md:hidden px-2">
+        <div className="w-full shadow-xl bg-base-100">
+          <form onSubmit={handleSubmit(onSubmit)} className="px-3">
             <h1 className="uppercase py-5 text-xl">Add Recipe</h1>
             <div className="form-control">
               <label className="label">
@@ -99,7 +204,7 @@ const AddRecipe = () => {
                 id="name"
                 {...register("name")}
                 placeholder="Recipe Name"
-                className="input input-bordered"
+                className="input input-bordered w-full"
                 required
               />
             </div>

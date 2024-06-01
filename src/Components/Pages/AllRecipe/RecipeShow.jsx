@@ -19,11 +19,17 @@ const RecipeShow = ({ record, handleViewRecipe }) => {
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
       <figure>
-        <img src={record?.image} className="w-[400px] h-full" alt="Album" />
+        <img
+          src={record?.image}
+          className="w-[400px] h-[300px] rounded-md"
+          alt="Album"
+        />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{record?.name}</h2>
-        <div className="text-xl">{record?.country}</div>
+        <div className="flex justify-between">
+          <h2 className="card-title">{record?.name}</h2>
+          <div className="text-xl text-blue-500">{record?.country}</div>
+        </div>
         <div className="pb-1">{record?.email}</div>
         <div className="pb-1">
           {name.length != 0 && (
